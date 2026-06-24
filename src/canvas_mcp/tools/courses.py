@@ -48,11 +48,12 @@ def register_course_tools(mcp: FastMCP):
 
         params = {
             "include[]": ["term", "teachers", "total_students"],
-            "per_page": 100
+            "per_page": 100,
+            "enrollment_state":"active"
         }
 
-        if not include_all:
-            params["enrollment_type"] = "teacher"
+        # if not include_all:
+        #     params["enrollment_type"] = "teacher"
 
         if include_concluded:
             params["state[]"] = ["available", "completed"]
